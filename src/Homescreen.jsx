@@ -1,6 +1,6 @@
 import './App.jsx';
 import Typography from '@mui/material/Typography';
-import { Box, Chip, Paper, Link, List, ListItem, Stack } from '@mui/material';
+import { Box, Chip, Paper, Link, Stack } from '@mui/material';
 import React from 'react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
@@ -9,8 +9,6 @@ import {
     FaPython, 
     FaJava, 
     FaPhp, 
-    FaHtml5, 
-    FaCss3Alt, 
     FaReact, 
     FaBootstrap, 
     FaLinux 
