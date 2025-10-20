@@ -1,9 +1,21 @@
 import './App.jsx';
 import Typography from '@mui/material/Typography';
-import { Box, Chip, Paper, Link } from '@mui/material';
+import { Box, Chip, Paper, Link, List, ListItem, Stack } from '@mui/material';
 import React from 'react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+// Add these imports for the icons
+import { 
+    FaPython, 
+    FaJava, 
+    FaPhp, 
+    FaHtml5, 
+    FaCss3Alt, 
+    FaReact, 
+    FaBootstrap, 
+    FaLinux 
+} from 'react-icons/fa';
+import { SiJavascript, SiPostgresql, SiMui } from 'react-icons/si';
 
 // main homescreen element. 
 function Homescreen() {
@@ -173,7 +185,7 @@ function AboutPage({ displayAboutPage }) {
                 padding: 4,
                 boxSizing: 'border-box',
             }}
-        >
+        >    
             <Typography 
                 id="about-heading"
                 variant="h3" 
@@ -182,6 +194,7 @@ function AboutPage({ displayAboutPage }) {
                 About Me
             </Typography>    
             <Box sx={{ maxWidth: '800px', textAlign: 'center' }}>
+                <LanguageList />
                 <Typography variant="body1" sx={{ marginBottom: 2, lineHeight: 1.6, fontSize: '1.1rem' }}>
                     I am a first year student at Red River Polytechnic in the Application Development and Delivery program.
                 </Typography>
@@ -251,6 +264,61 @@ function ContactScreen({ displayContactPage }) {
             </Box>
         </Box>
     );
+}
+
+function LanguageList() {
+    const technologies = [
+        { name: 'Python', icon: <FaPython />, color: '#3776ab' },
+        { name: 'JavaScript', icon: <SiJavascript />, color: '#f7df1e' },
+        { name: 'Java', icon: <FaJava />, color: '#ed8b00' },
+        { name: 'React', icon: <FaReact />, color: '#61dafb' },
+        { name: 'PHP', icon: <FaPhp />, color: '#777bb4' },
+        { name: 'Bootstrap', icon: <FaBootstrap />, color: '#7952b3' },
+        { name: 'Material-UI', icon: <SiMui />, color: '#0081cb' },
+        { name: 'PostgreSQL', icon: <SiPostgresql />, color: '#336791' },
+        { name: 'Linux', icon: <FaLinux />, color: '#fcc624' }
+    ];
+    
+    return (
+        <Stack 
+            direction="row" 
+            spacing={2} 
+            justifyContent="center" 
+            flexWrap="wrap"
+            sx={{ marginBottom: 3, gap: 2 }}
+        >
+            {technologies.map((technology) => (
+                <Box 
+                    key={technology.name}
+                    sx={{ 
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        color: 'white',
+                        fontSize: '2rem',
+                        '&:hover': {
+                            color: '#4fa3e0',
+                            transform: 'scale(1.1)',
+                            transition: 'all 0.3s ease'
+                        }
+                    }}
+                    title={technology.name} // Tooltip on hover
+                >
+                    {technology.icon}
+                    <Typography 
+                        variant="caption" 
+                        sx={{ 
+                            fontSize: '0.8rem', 
+                            marginTop: 0.5,
+                            opacity: 0.8
+                        }}
+                    >
+                        {technology.name}
+                    </Typography>
+                </Box>
+            ))}
+        </Stack>
+    )
 }
 
 AboutPage.propTypes = {
