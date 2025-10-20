@@ -66,3 +66,11 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.small-text {
+  font-size: 0.8em;
+}
+
+.smaller-text {
+  font-size: 0.7em;
+}
