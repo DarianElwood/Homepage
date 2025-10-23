@@ -41,10 +41,9 @@ function Homescreen() {
                 color: 'white',
             }}
         >
-            <SplashScreen 
+            <SplashScreen
                 aboutClickHandler={aboutClickHandler}
                 contactClickHandler={contactClickHandler}
-                activePage={activePage}
             />
             <ContactScreen displayContactPage={activePage === 'contact'} />
             <AboutPage displayAboutPage={activePage === 'about'} />
@@ -52,7 +51,7 @@ function Homescreen() {
     );
 }
 
-function SplashScreen({ aboutClickHandler, contactClickHandler, activePage }) {
+function SplashScreen({ aboutClickHandler, contactClickHandler }) {
     return (
         <Box 
             component="header"
@@ -96,11 +95,15 @@ function SplashScreen({ aboutClickHandler, contactClickHandler, activePage }) {
                             label="About" 
                             onClick={aboutClickHandler}
                             sx={{ 
-                                color: 'white', 
-                                background: activePage === 'about' ? '#4fa3e0' : '#4903fc',
-                                '&:hover': { 
+                                color: 'white',
+                                background: '#4903fc',
+                                '&:hover': {
                                     color: 'black',
                                     background: '#4fa3e0'
+                                },
+                                '&.Mui-focusVisible, &:focus': {
+                                    outline: 'none',
+                                    boxShadow: 'none',
                                 },
                                 fontSize: '1rem',
                                 padding: '8px 16px',
@@ -113,11 +116,15 @@ function SplashScreen({ aboutClickHandler, contactClickHandler, activePage }) {
                             target="_blank"
                             rel="noopener noreferrer"
                             sx={{ 
-                                color: 'white', 
-                                background: '#4903fc', 
-                                '&:hover': { 
+                                color: 'white',
+                                background: '#4903fc',
+                                '&:hover': {
                                     color: 'black',
                                     background: '#4fa3e0'
+                                },
+                                '&.Mui-focusVisible, &:focus': {
+                                    outline: 'none',
+                                    boxShadow: 'none',
                                 },
                                 fontSize: '1rem',
                                 padding: '8px 16px',
@@ -130,11 +137,15 @@ function SplashScreen({ aboutClickHandler, contactClickHandler, activePage }) {
                             target="_blank"
                             rel="noopener noreferrer"
                             sx={{ 
-                                color: 'white', 
-                                background: '#4903fc', 
-                                '&:hover': { 
+                                color: 'white',
+                                background: '#4903fc',
+                                '&:hover': {
                                     color: 'black',
                                     background: '#4fa3e0'
+                                },
+                                '&.Mui-focusVisible, &:focus': {
+                                    outline: 'none',
+                                    boxShadow: 'none',
                                 },
                                 fontSize: '1rem',
                                 padding: '8px 16px',
@@ -144,11 +155,15 @@ function SplashScreen({ aboutClickHandler, contactClickHandler, activePage }) {
                             label="Contact" 
                             onClick={contactClickHandler}
                             sx={{ 
-                                color: 'white', 
-                                background: activePage === 'contact' ? '#4fa3e0' : '#4903fc',
-                                '&:hover': { 
+                                color: 'white',
+                                background: '#4903fc',
+                                '&:hover': {
                                     color: 'black',
                                     background: '#4fa3e0'
+                                },
+                                '&.Mui-focusVisible, &:focus': {
+                                    outline: 'none',
+                                    boxShadow: 'none',
                                 },
                                 fontSize: '1rem',
                                 padding: '8px 16px',
@@ -330,7 +345,6 @@ ContactScreen.propTypes = {
 SplashScreen.propTypes = {
     aboutClickHandler: PropTypes.func.isRequired,
     contactClickHandler: PropTypes.func.isRequired,
-    activePage: PropTypes.string.isRequired,
 };
 
 export default Homescreen;
