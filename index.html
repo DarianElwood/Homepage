@@ -24,6 +24,9 @@
     
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
       "@context": "https://schema.org",
       "@graph": [
@@ -79,9 +82,64 @@
           "name": "Darian Elwood - Portfolio",
           "description": "Personal portfolio of Darian Elwood, a software development student at Red River Polytechnic"
         }
+      },
+      "knowsAbout": [
+        "Python",
+        "JavaScript",
+        "Java",
+        "PHP",
+        "ReactJS",
+        "Bootstrap",
+        "Material-UI",
+        "PostgreSQL",
+        "HTML",
+        "CSS",
+        "Linux System Administration"
+      ],
+      "sameAs": [
+        "https://github.com/DarianElwood",
+        "https://www.linkedin.com/in/darian-elwood-bb713b330/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-204-557-5027",
+        "email": "delwood@academic.rrc.ca",
+        "contactType": "personal",
+        "availableLanguage": "English"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://darianelwood.com",
+      "url": "https://darianelwood.com",
+      "name": "Darian Elwood - Portfolio",
+      "description": "Personal portfolio of Darian Elwood, a software development student at Red River Polytechnic.",
+      "publisher": { "@id": "https://darianelwood.com/", "name": "Darian Elwood", }
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "Red River Polytechnic",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "CA",
+        "addressLocality": "Winnipeg"
+      }
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+1-204-557-5027",
+      "email": "delwood@academic.rrc.ca",
+      "contactType": "customer service",
+      "areaServed": "CA",
+      "availableLanguage": "English",
+      "sameAs": [
+        "https://signal.me/#eu/TSxSg9gLzGUGmfMlqLYA5Jko1ayooDtd0-XrOMnNQr87P4JkiPBEtpTk8gtmG1uO",
+        "https://wa.me/12045575027"
       ]
     }
-    </script>
+  ]
+}
+</script>
   </head>
   <body>
     <div id="root"></div>
