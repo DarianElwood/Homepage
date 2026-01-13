@@ -263,7 +263,7 @@ function ContactScreen({ displayContactPage }) {
                 }}
             >
                 <Typography variant="body1" sx={{ marginBottom: 2, fontSize: '1.1rem' }}>
-                    Email: <Link href="mailto:delwood@academic.rrc.ca" sx={{ color: '#308bd5' }}>delwood@academic.rrc.ca</Link>
+                    Email: <Link href="mailto:dellwood546@gmail.com" sx={{ color: '#308bd5' }}>dellwood546@gmail.com</Link>
                 </Typography>
                 <Typography variant="body1" sx={{ marginBottom: 2, fontSize: '1.1rem' }}>
                     Cell: <Link href="tel:12045575027" sx={{ color: '#308bd5' }}>+1 (204) 557-5027</Link>
