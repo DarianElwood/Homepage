@@ -53,6 +53,21 @@ function Homescreen() {
             <ContactScreen displayContactPage={activePage === 'contact'} />
             <AboutPage displayAboutPage={activePage === 'about'} />
             <PortfolioPage displayPortfolioPage={activePage === 'portfolio'} />
+            <Box
+                component="footer"
+                sx={{
+                    mt: 'auto',
+                    width: '100%',
+                    textAlign: 'center',
+                    paddingY: 2,
+                    borderTop: '1px solid #3a3f48',
+                    backgroundColor: '#282c34',
+                }}
+            >
+                <Typography variant="body2" sx={{ color: 'white' }}>
+                    {'\u00A9 Darian Elwood 2026'}
+                </Typography>
+            </Box>
         </Box> 
     );
 }
