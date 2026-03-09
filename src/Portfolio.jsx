@@ -11,6 +11,7 @@ function Portfolio({ displayPortfolioPage }) {
     return (
             <Box 
             component="section"
+            id="portfolio"
             aria-labelledby="portfolio-heading"
             sx={{
                 display: 'flex',

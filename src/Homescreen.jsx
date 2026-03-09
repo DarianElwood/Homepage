@@ -2,7 +2,7 @@ import './App.jsx';
 import Typography from '@mui/material/Typography';
 import { Box, Chip, Paper, Link, Stack } from '@mui/material';
 import React from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import PortfolioPage from './Portfolio';
 import { 
@@ -15,6 +15,29 @@ import {
 } from 'react-icons/fa';
 import { SiJavascript, SiPostgresql, SiMui } from 'react-icons/si';
 
+const PAGE_META = {
+    about: {
+        title: 'About | Darian Elwood',
+        description: 'Learn about Darian Elwood, a software development student focused on React, Python, and modern web technologies.',
+    },
+    contact: {
+        title: 'Contact | Darian Elwood',
+        description: 'Contact Darian Elwood for software roles, freelance opportunities, or collaboration projects.',
+    },
+    portfolio: {
+        title: 'Portfolio | Darian Elwood',
+        description: 'Browse portfolio projects by Darian Elwood, including client websites and developer tools.',
+    },
+};
+
+function setMetaTag(selector, attribute, content) {
+    const element = document.querySelector(selector);
+    if (!element) {
+        return;
+    }
+    element.setAttribute(attribute, content);
+}
+
 // main homescreen element. 
 function Homescreen() {
     // Use a single state to track which page is active
@@ -23,15 +46,50 @@ function Homescreen() {
     // click handlers for the about and contact buttons
     function contactClickHandler() {
         setActivePage('contact');
+        window.location.hash = 'contact';
     }
     
     function aboutClickHandler() {
         setActivePage('about');
+        window.location.hash = 'about';
     }
 
     function portfolioClickHandler() {
         setActivePage('portfolio');
+        window.location.hash = 'portfolio';
     }
+
+    useEffect(() => {
+        const normalizeHash = (rawHash) => {
+            const hash = rawHash.replace('#', '').toLowerCase();
+            if (hash === 'contact' || hash === 'portfolio') {
+                return hash;
+            }
+            return 'about';
+        };
+
+        const handleHashChange = () => {
+            setActivePage(normalizeHash(window.location.hash));
+        };
+
+        handleHashChange();
+        window.addEventListener('hashchange', handleHashChange);
+        return () => window.removeEventListener('hashchange', handleHashChange);
+    }, []);
+
+    useEffect(() => {
+        const fallback = {
+            title: 'Darian Elwood - Software Developer Portfolio',
+            description: 'Portfolio website for Darian Elwood, an application development student open to jobs and freelance work.',
+        };
+        const metadata = PAGE_META[activePage] || fallback;
+        document.title = metadata.title;
+        setMetaTag('meta[name="description"]', 'content', metadata.description);
+        setMetaTag('meta[property="og:title"]', 'content', metadata.title);
+        setMetaTag('meta[property="og:description"]', 'content', metadata.description);
+        setMetaTag('meta[name="twitter:title"]', 'content', metadata.title);
+        setMetaTag('meta[name="twitter:description"]', 'content', metadata.description);
+    }, [activePage]);
     
     return (
         <Box 
@@ -98,7 +156,7 @@ function SplashScreen({ aboutClickHandler, contactClickHandler, portfolioClickHa
                     <Typography variant="h1" sx={{ marginBottom: 2, fontWeight: 'bold' }}>
                         Darian Elwood
                     </Typography>
-                    <Typography variant="h2" sx={{ marginBottom: 4, maxWidth: '600px' }}>
+                    <Typography component="h2" variant="h2" sx={{ marginBottom: 4, maxWidth: '600px' }}>
                         1st year application development and delivery student at Red River Polytechnic.
                     </Typography>
                     
@@ -114,6 +172,8 @@ function SplashScreen({ aboutClickHandler, contactClickHandler, portfolioClickHa
                     >
                         <Chip 
                             label="About" 
+                            component="a"
+                            href="#about"
                             onClick={aboutClickHandler}
                             sx={{ 
                                 color: 'white',
@@ -196,6 +256,8 @@ function SplashScreen({ aboutClickHandler, contactClickHandler, portfolioClickHa
                         />
                         <Chip 
                             label="Contact" 
+                            component="a"
+                            href="#contact"
                             onClick={contactClickHandler}
                             sx={{ 
                                 color: 'white',
@@ -213,6 +275,8 @@ function SplashScreen({ aboutClickHandler, contactClickHandler, portfolioClickHa
                             }}
                         />
                         <Chip label="Portfolio"
+                            component="a"
+                            href="#portfolio"
                             onClick={portfolioClickHandler}
                             sx={{ 
                                 color: 'white',
@@ -245,6 +309,7 @@ function AboutPage({ displayAboutPage }) {
     return (
         <Box 
             component="section"
+            id="about"
             aria-labelledby="about-heading"
             sx={{
                 display: 'flex',
@@ -294,6 +359,7 @@ function ContactScreen({ displayContactPage }) {
     return (
         <Box 
             component="section"
+            id="contact"
             aria-labelledby="contact-heading"
             sx={{
                 display: 'flex',

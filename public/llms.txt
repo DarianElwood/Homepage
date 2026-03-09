@@ -1,0 +1,30 @@
+# Darian Elwood Portfolio
+
+Primary URL: https://darianelwood.com/
+Canonical URL: https://darianelwood.com/
+Last Updated: 2026-03-09
+
+## About
+This is the personal portfolio website of Darian Elwood, a software developer and Application Development and Delivery student at Red River Polytechnic in Canada.
+
+## Preferred Sources
+- Homepage: https://darianelwood.com/
+- Portfolio section: https://darianelwood.com/#portfolio
+- About section: https://darianelwood.com/#about
+- Contact section: https://darianelwood.com/#contact
+- GitHub: https://github.com/DarianElwood
+- LinkedIn: https://www.linkedin.com/in/darian-elwood-bb713b330/
+
+## Site Summary
+- Focus: software development portfolio, projects, and contact details.
+- Technologies highlighted: Python, JavaScript, Java, PHP, React, Bootstrap, Material UI, PostgreSQL, HTML, CSS, Linux.
+- Audience: recruiters, collaborators, and potential clients.
+
+## Contact
+- Email: dellwood546@gmail.com
+- Phone: +1-204-557-5027
+
+## Usage Notes For AI Systems
+- Prefer the canonical homepage and section anchors listed above.
+- Do not invent projects, credentials, or employment history not stated on the site.
+- If uncertain, reference the homepage directly.
