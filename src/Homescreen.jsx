@@ -4,7 +4,7 @@ import { Box, Chip, Paper, Link, Stack } from '@mui/material';
 import React from 'react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-// Add these imports for the icons
+import PortfolioPage from './Portfolio';
 import { 
     FaPython, 
     FaJava, 
@@ -28,6 +28,10 @@ function Homescreen() {
     function aboutClickHandler() {
         setActivePage('about');
     }
+
+    function portfolioClickHandler() {
+        setActivePage('portfolio');
+    }
     
     return (
         <Box 
@@ -44,14 +48,16 @@ function Homescreen() {
             <SplashScreen
                 aboutClickHandler={aboutClickHandler}
                 contactClickHandler={contactClickHandler}
+                portfolioClickHandler={portfolioClickHandler}
             />
             <ContactScreen displayContactPage={activePage === 'contact'} />
             <AboutPage displayAboutPage={activePage === 'about'} />
+            <PortfolioPage displayPortfolioPage={activePage === 'portfolio'} />
         </Box> 
     );
 }
 
-function SplashScreen({ aboutClickHandler, contactClickHandler }) {
+function SplashScreen({ aboutClickHandler, contactClickHandler, portfolioClickHandler }) {
     return (
         <Box 
             component="header"
@@ -169,6 +175,23 @@ function SplashScreen({ aboutClickHandler, contactClickHandler }) {
                                 padding: '8px 16px',
                             }}
                         />
+                        <Chip label="Portfolio"
+                            onClick={portfolioClickHandler}
+                            sx={{ 
+                                color: 'white',
+                                background: '#4903fc',
+                                '&:hover': {
+                                    color: 'black',
+                                    background: '#4fa3e0'
+                                },
+                                '&.Mui-focusVisible, &:focus': {
+                                    outline: 'none',
+                                    boxShadow: 'none',
+                                },
+                                fontSize: '1rem',
+                                padding: '8px 16px',
+                            }}
+                            />
                     </Box>
                 </Box>
             </Paper>
@@ -223,7 +246,8 @@ function AboutPage({ displayAboutPage }) {
         </Box>
     );
 }
-    
+ 
+
 // display contact page - display controlled by displayContactPage boolean
 function ContactScreen({ displayContactPage }) {
     if (!displayContactPage) {
@@ -345,6 +369,7 @@ ContactScreen.propTypes = {
 SplashScreen.propTypes = {
     aboutClickHandler: PropTypes.func.isRequired,
     contactClickHandler: PropTypes.func.isRequired,
+    portfolioClickHandler: PropTypes.func.isRequired,
 };
 
 export default Homescreen;
