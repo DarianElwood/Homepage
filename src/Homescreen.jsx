@@ -124,13 +124,23 @@ function SplashScreen({ aboutClickHandler, contactClickHandler, portfolioClickHa
                             sx={{ 
                                 color: 'white',
                                 background: '#4903fc',
+                                textDecoration: 'none',
                                 '&:hover': {
                                     color: 'black',
-                                    background: '#4fa3e0'
+                                    background: '#4fa3e0',
+                                    textDecoration: 'none',
                                 },
                                 '&.Mui-focusVisible, &:focus': {
                                     outline: 'none',
                                     boxShadow: 'none',
+                                },
+                                '&:visited': {
+                                    color: 'white',
+                                },
+                                '& .MuiChip-label': {
+                                    color: 'inherit',
+                                    fontSize: '1rem',
+                                    fontFamily: 'inherit',
                                 },
                                 fontSize: '1rem',
                                 padding: '8px 16px',
@@ -145,13 +155,23 @@ function SplashScreen({ aboutClickHandler, contactClickHandler, portfolioClickHa
                             sx={{ 
                                 color: 'white',
                                 background: '#4903fc',
+                                textDecoration: 'none',
                                 '&:hover': {
                                     color: 'black',
-                                    background: '#4fa3e0'
+                                    background: '#4fa3e0',
+                                    textDecoration: 'none',
                                 },
                                 '&.Mui-focusVisible, &:focus': {
                                     outline: 'none',
                                     boxShadow: 'none',
+                                },
+                                '&:visited': {
+                                    color: 'white',
+                                },
+                                '& .MuiChip-label': {
+                                    color: 'inherit',
+                                    fontSize: '1rem',
+                                    fontFamily: 'inherit',
                                 },
                                 fontSize: '1rem',
                                 padding: '8px 16px',
