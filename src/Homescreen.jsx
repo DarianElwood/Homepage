@@ -157,7 +157,7 @@ function SplashScreen({ aboutClickHandler, contactClickHandler, portfolioClickHa
                         Darian Elwood
                     </Typography>
                     <Typography component="h2" variant="h2" sx={{ marginBottom: 4, maxWidth: '600px' }}>
-                        1st year application development and delivery student at Red River Polytechnic.
+                        2nd year application development and delivery student at Red River Polytechnic.
                     </Typography>
                     
                     <Box 

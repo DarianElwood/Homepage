@@ -148,6 +148,58 @@ function Portfolio({ displayPortfolioPage }) {
                             </CardContent>
                         </Card>
                     </Grid>
+                    <Grid item xs={12} sm={10} md={6} lg={5} sx={{ display: 'flex' }}>
+                        <Card
+                            sx={{
+                                backgroundColor: '#1f232b',
+                                color: 'white',
+                                border: '1px solid #4903fc',
+                                width: '100%',
+                                height: '100%',
+                                display: 'flex',
+                                flexDirection: 'column',
+                            }}
+                        >
+                            <Box
+                                component="a"
+                                href="https://github.com/DarianElwood/Server-Monitor"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                sx={{ display: 'block' }}
+                            >
+                                <Box
+                                    sx={{
+                                        width: '100%',
+                                        height: { xs: 240, sm: 300 },
+                                        borderBottom: '1px solid #2e3440',
+                                        background: 'linear-gradient(135deg, #4903fc 0%, #4fa3e0 100%)',
+                                    }}
+                                />
+                            </Box>
+                            <CardContent sx={{ flexGrow: 1 }}>
+                                <Typography variant="h6" sx={{ marginBottom: 1.5 }}>
+                                    Server Monitor
+                                </Typography>
+                                <Typography variant="body1" sx={{ marginBottom: 1 }}>
+                                    A fairly barebones steam game server monitor that I wrote so I can confirm that my Arma 3 server is online.
+                                </Typography>
+                                <Typography variant="body1" sx={{ marginBottom: 1 }}>
+                                    The backend is made with flask, while the frontend is pure HTML/JS/CSS. The monitor module is also written in Python. 
+                                </Typography>
+                                <Typography variant="body1">
+                                    Link:{' '}
+                                    <Link
+                                        href="https://github.com/DarianElwood/ServerMonitor"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        sx={{ color: '#4fa3e0' }}
+                                    >
+                                        github.com/DarianElwood/ServerMonitor
+                                    </Link>
+                                </Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
                 </Grid>
             </Box>
     );
