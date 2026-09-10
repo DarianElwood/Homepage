@@ -189,12 +189,12 @@ function Portfolio({ displayPortfolioPage }) {
                                 <Typography variant="body1">
                                     Link:{' '}
                                     <Link
-                                        href="https://github.com/DarianElwood/ServerMonitor"
+                                        href="https://github.com/DarianElwood/Server-Monitor"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         sx={{ color: '#4fa3e0' }}
                                     >
-                                        github.com/DarianElwood/ServerMonitor
+                                        github.com/DarianElwood/Server-Monitor
                                     </Link>
                                 </Typography>
                             </CardContent>
