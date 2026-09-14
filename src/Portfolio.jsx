@@ -74,10 +74,7 @@ function Portfolio({ displayPortfolioPage }) {
                                     My first paid project. I was hired to build a website for a property maintenance company.
                                 </Typography>
                                 <Typography variant="body1" sx={{ marginBottom: 1 }}>
-                                    Built with HTML, CSS, and JavaScript.
-                                </Typography>
-                                <Typography variant="body1" sx={{ marginBottom: 1 }}>
-                                    Frontend is built with HTML, CSS, and JavaScript. The backend is built with NodeJS. It is hosted on Vercel and Railway.
+                                    The frontend is built with HTML, CSS, and JavaScript, whilst the backend is built with NodeJS.
                                 </Typography>
                                 <Typography variant="body1">
                                     Link:{' '}
