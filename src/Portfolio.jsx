@@ -129,8 +129,8 @@ function Portfolio({ displayPortfolioPage }) {
                                 <Typography variant="body1" sx={{ marginBottom: 1 }}>
                                     A simple game server monitor that uses the steam A2S protocol to query and display the status of some game servers I run.
                                 </Typography>
-                                <Typography variant="body1" sx={{ marginBottom: 1 }}>
-                                    Built with HTML, CSS, and JavaScript on the frontend, and Flask on the backend.
+                                <Typography variant="body1" sx={{ marginBottom: 1 }}>ource code is available on my Github.
+                                    Built with HTML, CSS, and JavaScript on the frontend, and Flask on the backend. Source code is available on my Github.
                                 </Typography>
                                 <Typography variant="body1">
                                     Link:{' '}
