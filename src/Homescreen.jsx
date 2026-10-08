@@ -334,7 +334,7 @@ function AboutPage({ displayAboutPage }) {
             <Box sx={{ maxWidth: '800px', textAlign: 'center' }}>
                 <LanguageList />
                 <Typography variant="body1" sx={{ marginBottom: 2, lineHeight: 1.6, fontSize: '1.1rem' }}>
-                    I am a first year student at Red River Polytechnic in the Application Development and Delivery program.
+                    I am a second year student at Red River Polytechnic in the Application Development and Delivery program.
                 </Typography>
                 <Typography variant="body1" sx={{ marginBottom: 2, lineHeight: 1.6, fontSize: '1.1rem' }}>
                     I am excited to gain experience working in the tech field.
