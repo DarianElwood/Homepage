@@ -5,6 +5,8 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import PortfolioPage from './Portfolio';
+import LastFMTooltip from './LastFM_tooltip';
+
 import { 
     FaPython, 
     FaJava, 
@@ -293,6 +295,7 @@ function SplashScreen({ aboutClickHandler, contactClickHandler, portfolioClickHa
                                 padding: '8px 16px',
                             }}
                             />
+                        <LastFMTooltip />
                     </Box>
                 </Box>
             </Paper>
