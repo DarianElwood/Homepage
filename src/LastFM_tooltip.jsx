@@ -7,6 +7,7 @@ function LastFMTooltip() {
   const [open, setOpen] = useState(false);
   const [track, setTrack] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     if (!open || !username) {
@@ -15,11 +16,18 @@ function LastFMTooltip() {
 
     let cancelled = false;
     setLoading(true);
+    setError(false);
 
     getRecentTracks(username, 1)
       .then(([recentTrack]) => {
         if (!cancelled) {
           setTrack(recentTrack ?? null);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setTrack(null);
+          setError(true);
         }
       })
       .finally(() => {
@@ -36,6 +44,8 @@ function LastFMTooltip() {
   const imageUrl = track?.image?.find((image) => image.size === 'large')?.['#text'];
   const tooltipContent = loading ? (
     'Loading latest scrobble...'
+  ) : error ? (
+    'Unable to load the latest scrobble.'
   ) : track ? (
     <Box
       sx={{
