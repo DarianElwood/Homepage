@@ -256,6 +256,26 @@ function SplashScreen({ aboutClickHandler, contactClickHandler, portfolioClickHa
                                 padding: '8px 16px',
                             }}
                         />
+                        <LastFMTooltip />
+                        <Chip label="Portfolio"
+                            component="a"
+                            href="#portfolio"
+                            onClick={portfolioClickHandler}
+                            sx={{ 
+                                color: 'white',
+                                background: '#4903fc',
+                                '&:hover': {
+                                    color: 'black',
+                                    background: '#4fa3e0'
+                                },
+                                '&.Mui-focusVisible, &:focus': {
+                                    outline: 'none',
+                                    boxShadow: 'none',
+                                },
+                                fontSize: '1rem',
+                                padding: '8px 16px',
+                            }}
+                        />
                         <Chip 
                             label="Contact" 
                             component="a"
@@ -276,26 +296,6 @@ function SplashScreen({ aboutClickHandler, contactClickHandler, portfolioClickHa
                                 padding: '8px 16px',
                             }}
                         />
-                        <Chip label="Portfolio"
-                            component="a"
-                            href="#portfolio"
-                            onClick={portfolioClickHandler}
-                            sx={{ 
-                                color: 'white',
-                                background: '#4903fc',
-                                '&:hover': {
-                                    color: 'black',
-                                    background: '#4fa3e0'
-                                },
-                                '&.Mui-focusVisible, &:focus': {
-                                    outline: 'none',
-                                    boxShadow: 'none',
-                                },
-                                fontSize: '1rem',
-                                padding: '8px 16px',
-                            }}
-                            />
-                        <LastFMTooltip />
                     </Box>
                 </Box>
             </Paper>
