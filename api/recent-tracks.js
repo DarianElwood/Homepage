@@ -32,13 +32,17 @@ export default async function handler(request, response) {
   });
 
   try {
-    const lastFmResponse = await fetch(`${apiUrl}?${params}`);
+    const lastFmResponse = await fetch(`${apiUrl}?${params}`, {
+      headers: {
+        'User-Agent': 'darianelwood-homepage/1.0 (+https://darianelwood.com)',
+      },
+    });
     const data = await lastFmResponse.json();
 
     if (!lastFmResponse.ok || data.error) {
       console.error('Last.fm request failed:', data.message || lastFmResponse.status);
-      response.status(lastFmResponse.ok ? 502 : lastFmResponse.status).json({
-        error: 'Last.fm request failed.',
+      response.status(502).json({
+        error: data.message || 'Last.fm request failed.',
       });
       return;
     }
@@ -49,4 +53,3 @@ export default async function handler(request, response) {
     response.status(502).json({ error: 'Unable to fetch recent tracks.' });
   }
 }
-
