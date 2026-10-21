@@ -13,10 +13,11 @@ export default async function handler(request, response) {
   }
 
   const apiKey = process.env.LASTFM_API_KEY;
-  const apiUrl = process.env.LASTFM_API_BASE_URL;
-  console.log('Last.fm API Base URL:', apiUrl);
+  const apiUrl =
+    process.env.LASTFM_API_BASE_URL ||
+    'https://ws.audioscrobbler.com/2.0/';
 
-  if (!apiKey || !apiUrl) {
+  if (!apiKey) {
     console.error('Last.fm server environment variables are not configured.');
     response.status(500).json({ error: 'Last.fm is not configured.' });
     return;
@@ -48,5 +49,4 @@ export default async function handler(request, response) {
     response.status(502).json({ error: 'Unable to fetch recent tracks.' });
   }
 }
-
 
