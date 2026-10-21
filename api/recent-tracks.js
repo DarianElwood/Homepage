@@ -14,6 +14,7 @@ export default async function handler(request, response) {
 
   const apiKey = process.env.LASTFM_API_KEY;
   const apiUrl = process.env.LASTFM_API_BASE_URL;
+  console.log('Last.fm API Base URL:', apiUrl);
 
   if (!apiKey || !apiUrl) {
     console.error('Last.fm server environment variables are not configured.');
@@ -47,3 +48,5 @@ export default async function handler(request, response) {
     response.status(502).json({ error: 'Unable to fetch recent tracks.' });
   }
 }
+
+
